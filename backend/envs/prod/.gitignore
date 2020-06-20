@@ -1,0 +1,6 @@
+mediafiles/*
+staticfiles/*
+postgres_db_data/*
+
+!mediafiles/.gitignore
+!staticfiles/.gitignore
