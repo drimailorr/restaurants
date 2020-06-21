@@ -21,14 +21,23 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = '$silp@7b54ur94r69^g25c%g_%tywj+l8347to)s_wvu3!hkwo'
-SECRET_KEY = os.environ.get("SECRET_KEY")
+try:
+    SECRET_KEY = os.environ.get("SECRET_KEY")
+finally:
+    SECRET_KEY = "dqwqdqw"
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-DEBUG = int(os.environ.get("DEBUG", default=0))
+DEBUG = True
+
+
+#DEBUG = int(os.environ.get("DEBUG", default=0))
 
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+try:
+    ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS").split(" ")
+except AttributeError:
+    ALLOWED_HOSTS = "*"
 
 # Application definition
 
