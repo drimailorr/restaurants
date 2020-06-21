@@ -4,3 +4,6 @@ postgres_db_data/*
 
 !mediafiles/.gitignore
 !staticfiles/.gitignore
+
+env.prod.db
+env.prod

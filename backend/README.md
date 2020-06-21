@@ -8,7 +8,9 @@ http://localhost:8000/
 
 # Prod env:
 
-ansible-vault decrypt envs/prod/env.prod.db envs/prod/env.prod <br>
+ansible-vault decrypt backend/envs/prod/env.prod.db.vault --output backend/envs/prod/env.prod.db <br>
+ansible-vault decrypt backend/envs/prod/env.prod.vault --output backend/envs/prod/env.prod <br>
+
 mkdir envs/prod/{postgres_db_data,staticfiles,mediafiles} <br><br>
 
 docker-compose -f docker-compose.prod.yml up -d --build <br>
